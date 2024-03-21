@@ -3,7 +3,8 @@
 /dist
 /build
 
-*.d.ts
+*.d.ts 
+
 .DS_Store
 
 .env
