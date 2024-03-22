@@ -27,4 +27,25 @@ let dog: Dog = {
 
 // 조건이 더 적은게 슈퍼타입, 추가프로퍼티로 더 세세한게 하위타입
 animal = dog; // 슈퍼 = 하위 할당ok!
-dog = animal; // 하위 = 슈퍼 할당no!
+// dog = animal; // 하위 = 슈퍼 할당no!
+
+type Book = {
+  name: string;
+  price: number;
+};
+
+type ProgrammingBook = {
+  name: string;
+  price: number;
+  skill: string;
+};
+
+let book: Book;
+let programmingBook: ProgrammingBook = {
+  name: '한크잘 타스',
+  price: 33000,
+  skill: 'typescript',
+};
+
+book = programmingBook;
+// programmingBook = book;
