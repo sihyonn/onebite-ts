@@ -36,3 +36,32 @@ function neverEx() {
   let never2: never = 'string';
   let never3: never = true;
 }
+
+/**
+ * void 타입
+ */
+
+function voidEx() {
+  function voidFunc(): void {
+    console.log('hello');
+  }
+
+  // void가 undefined의 슈퍼타입이기 때문에 가능
+  let voidVar: void = undefined;
+}
+
+/**
+ * any 타입(치트키타입임!)
+ */
+function anyEx() {
+  let unknownVar: unknown;
+  let anyVar: any;
+  let neverVar: never;
+
+  // 업이든 다운이든 다한다!
+  anyVar = unknownVar;
+  unknownVar = anyVar;
+
+  // never 앞에선 막히는 존재. 네버로 다운캐스팅은 불가
+  neverVar = anyVar;
+}
