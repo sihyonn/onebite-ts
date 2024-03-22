@@ -15,14 +15,6 @@ a = 8;
 let arr: (number | string | boolean)[] = [8, 'string', true];
 
 // 객체의 union
-type Dog = {
-  name: string;
-  color: string;
-};
-type Person = {
-  name: string;
-  language: string;
-};
 
 type Union1 = Dog | Person;
 
@@ -40,6 +32,31 @@ const union3: Union1 = {
   language: 'ko',
 };
 
-const union4: Union1 = {
-  name: 'choco', // 얘는 Dog, Person에 공통적으로는 있지만 그 어느것에도 속한다고 볼 수 없음 = 오류
+// const union4: Union1 = {
+//   name: 'choco', // 얘는 Dog, Person에 공통적으로는 있지만 그 어느것에도 속한다고 볼 수 없음 = 오류
+// };
+
+/**
+ * 2. 교집합 - intersection 타입
+ */
+
+let variable: number & string; // number와 string은 교집합이 없어 never타입
+
+type Dog = {
+  name: string;
+  color: string;
+};
+type Person = {
+  name: string;
+  language: string;
+};
+
+type Intersection = Dog & Person;
+
+// 두 타입에 해당하는 프로퍼티가 다 들어와야 교집합에 포함될 수 있음
+// 하나라도 빠지면 안돼요!
+const intersection1: Intersection = {
+  name: 'n',
+  color: 'b',
+  language: 'k',
 };
