@@ -29,11 +29,6 @@ let dog: Dog = {
 animal = dog; // 슈퍼 = 하위 할당ok!
 // dog = animal; // 하위 = 슈퍼 할당no!
 
-type Book = {
-  name: string;
-  price: number;
-};
-
 type ProgrammingBook = {
   name: string;
   price: number;
@@ -49,3 +44,30 @@ let programmingBook: ProgrammingBook = {
 
 book = programmingBook;
 // programmingBook = book;
+
+/**
+ * 초과 프로퍼티 검사
+ * 객체 타입 변수 초기화 할 때, 초기화 값으로 객체 리터럴을 사용하면 발동
+ */
+
+type Book = {
+  name: string;
+  price: number;
+};
+
+let book2: Book = {
+  name: '한크잘 타스',
+  price: 33000,
+  // skill: 'typescript',
+};
+
+let book3: Book = programmingBook;
+
+function func(book: Book) {}
+func({
+  name: '한크잘 타스',
+  price: 33000,
+  // skill: 'typescript'
+});
+
+func(programmingBook);
