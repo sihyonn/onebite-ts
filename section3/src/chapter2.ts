@@ -32,9 +32,9 @@ function neverEx() {
   let bool: boolean = neverFunc();
 
   // 하위 타입에 상위타입을 할당하는 건 다운캐스트라 불가능
-  let never1: never = 1;
-  let never2: never = 'string';
-  let never3: never = true;
+  //   let never1: never = 1;
+  //   let never2: never = 'string';
+  //   let never3: never = true;
 }
 
 /**
@@ -63,5 +63,5 @@ function anyEx() {
   unknownVar = anyVar;
 
   // never 앞에선 막히는 존재. 네버로 다운캐스팅은 불가
-  neverVar = anyVar;
+  // neverVar = anyVar;
 }
